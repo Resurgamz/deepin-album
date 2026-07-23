@@ -34,6 +34,7 @@ protected:
     void paintEvent(QPaintEvent *e) override;
 
 private:
+    QPixmap colorizeIcon(const QPixmap &pixmap) const;
     void initConnections();
     void initUI();
     void unMountBtnClicked();
