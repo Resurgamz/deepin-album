@@ -164,6 +164,13 @@ void ThumbnailDelegate::drawImgAndVideo(QPainter *painter, const QStyleOptionVie
         }
     }
 
+    painter->setClipping(false);
+    painter->setBrush(Qt::NoBrush);
+    painter->setPen(QPen(themeType == DGuiApplicationHelper::LightType
+                         ? QColor(0, 0, 0, 26)
+                         : QColor(255, 255, 255, 26)));
+    painter->drawPath(bp1);
+
     //绘制选中图标
     if (selected && COMMON_STR_CLASS != m_imageTypeStr) {
         QRect rc = option.rect;
